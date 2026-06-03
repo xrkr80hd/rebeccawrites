@@ -1,0 +1,69 @@
+{
+  "siteSettings": {
+    "authorName": "Rebecca Jones",
+    "tagline": "Christian sci-fi author",
+    "primaryGenre": "Science fiction",
+    "audience": "Readers who love faith, wonder, prophecy, and epic stakes.",
+    "newsletterEnabled": true,
+    "shopEnabled": false,
+    "cmsStatusMessage": "Draft CMS content is ready for frontend integration."
+  },
+  "hero": {
+    "headline": "Atlas of the Deliverer",
+    "kicker": "A sci-fi world built on faith, prophecy, and impossible journeys.",
+    "summary": "An interactive author experience for Rebecca Jones and her unfolding sci-fi writings.",
+    "primaryCtaLabel": "Explore The Atlas",
+    "primaryCtaHref": "/world",
+    "secondaryCtaLabel": "Join Updates",
+    "secondaryCtaHref": "/newsletter",
+    "backgroundImage": "/assets/hero/atlas-background.jpg",
+    "featuredEmblemImage": "/assets/brand/atlas-emblem.png"
+  },
+  "books": [
+    {
+      "slug": "kurak",
+      "title": "KURAK",
+      "seriesTitle": "Atlas of the Deliverer",
+      "status": "In development",
+      "formats": ["Manuscript", "Future paperback", "Future ebook"],
+      "description": "The first book in a Christian sci-fi saga of kingdoms, exile, and deliverance.",
+      "themes": ["Faith", "Prophecy", "Courage", "Kingdoms"],
+      "coverImage": "/assets/books/kurak-cover.jpg",
+      "lookInsideExcerpt": "",
+      "preorderDate": null,
+      "buyLinks": [],
+      "signedCopyEnabled": false
+    }
+  ],
+  "characters": [],
+  "worldEntries": [],
+  "merchItems": [],
+  "updates": [],
+  "reviews": [],
+  "newsletter": {
+    "heading": "Follow Rebecca's writing journey",
+    "description": "Receive updates on Atlas of the Deliverer, launch news, and future reader extras.",
+    "provider": "manual",
+    "formAction": "",
+    "successMessage": "Thank you. You are on the update list."
+  },
+  "navigation": [
+    {
+      "label": "World",
+      "href": "/world"
+    },
+    {
+      "label": "Books",
+      "href": "/books"
+    },
+    {
+      "label": "Author",
+      "href": "/author"
+    },
+    {
+      "label": "Newsletter",
+      "href": "/newsletter"
+    }
+  ],
+  "updatedAt": "2026-06-01T21:52:00.000Z"
+}

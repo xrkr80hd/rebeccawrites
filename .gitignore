@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Next.js / build outputs
+.next/
+.next*/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Local environment files
+.env*.local
+.env
+
+# OS and editor noise
+.DS_Store
+._*
+
+# Local test and browser output
+.playwright-cli/
+output/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*

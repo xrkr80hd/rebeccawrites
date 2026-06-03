@@ -1,0 +1,431 @@
+# Agent Activity Log
+
+- [2026-04-07] [11:04 PM]
+  - Agent: Ezra
+  - Task: Reuse-first route mapping for Rebecca Writes revamp
+  - Governing Reference: agents/ezra.agent.md
+  - Checked: Existing `web/src/app` route inventory and target public route requirements
+  - Changed: No code changes were made
+  - Found: Core reuse routes are `/`, `/about`, `/contact`; new author routes required for `/series`, `/books/kurak`, `/coming-soon`, `/newsletter`
+  - Proven: Current app has App Router pages and legacy commerce/admin areas to isolate
+  - Not Proven: Exact future redirect strategy for legacy `/shop/[slug]`
+  - Files Touched: None
+  - Status: COMPLETE
+  - Next Step: Run Dan for schema/newsletter contract
+
+- [2026-04-07] [11:04 PM]
+  - Agent: Dan
+  - Task: Minimal schema and newsletter contract design
+  - Governing Reference: agents/dan.agent.md
+  - Checked: Existing contact API pattern, Supabase types, migration shape
+  - Changed: No code changes were made
+  - Found: Single-table `newsletter_subscriptions` plus provider adapter abstraction is the smallest safe extension
+  - Proven: Existing server-side insert pattern through Supabase admin client is already established
+  - Not Proven: Final external newsletter provider credentials and policies
+  - Files Touched: None
+  - Status: COMPLETE
+  - Next Step: Run Gabe for reuse-first UI composition mapping
+
+- [2026-04-07] [11:04 PM]
+  - Agent: Gabe
+  - Task: Reuse-first component and page structure mapping
+  - Governing Reference: agents/gabe.agent.md
+  - Checked: Existing shell/nav/card/form surfaces and required page list
+  - Changed: No code changes were made
+  - Found: Reuse existing shell/nav/forms, add only composition blocks for hero/newsletter/book features
+  - Proven: Newsletter must be present on home, coming-soon, newsletter page, and footer
+  - Not Proven: Exact visual composition quality until implementation and build verification
+  - Files Touched: None
+  - Status: COMPLETE
+  - Next Step: Run Josh for execution ordering
+
+- [2026-04-07] [11:04 PM]
+  - Agent: Josh
+  - Task: Execution sequencing for reuse-first build
+  - Governing Reference: agents/josh.agent.md
+  - Checked: Routing/schema/UI outputs and deployment-safe sequencing
+  - Changed: No code changes were made
+  - Found: Build order should be data/API first, then shared newsletter UI, then route scaffolding and shell updates
+  - Proven: This order minimizes rework and keeps legacy areas isolated
+  - Not Proven: Lint cleanliness across pre-existing admin files
+  - Files Touched: None
+  - Status: COMPLETE
+  - Next Step: Implement scaffold with verification
+
+- [2026-04-07] [11:04 PM]
+  - Agent: Josh
+  - Task: Execute scaffold implementation and verify
+  - Governing Reference: agents/AGENT_PERMISSIONS_ACTIONS_ONE_SHEET.md
+  - Checked: Build output, route generation table, lint output
+  - Changed: Implemented newsletter backend flow, new author routes/components, palette/system updates, and shell/nav/footer revamp
+  - Found: `npm --prefix web run build` passes; lint failures are pre-existing in admin/product components
+  - Proven: Required routes and newsletter flow compile and render; `/api/newsletter` is active
+  - Not Proven: External provider hookup beyond local supabase adapter
+  - Files Touched: web/src/app/*, web/src/components/*, web/src/lib/*, web/supabase/migrations/*, web/public/assets/atlas/*, web/.env.example
+  - Status: PARTIAL
+  - Next Step: Address pre-existing lint errors if a clean lint gate is required
+
+- [2026-06-01] [09:16 PM]
+  - Agent: Scribe
+  - Task: Strip old project-specific agent docs into a portable project agent system
+  - Governing Reference: User instruction and agents/AGENT_HARD_LOCK_RULES.md
+  - Checked: Existing agent guide, trigger registry, hard locks, role files, and control sheet
+  - Changed: Rewrote agent docs for ecommerce, app writing, interactive website making, and tabletop/e-game making; added missing Mo, Mike, Nathan, and Scribe role files
+  - Found: Previous docs still referenced Walker Docs, Wild Rose-era assumptions, and missing agent files
+  - Proven: The updated docs now include RPTPLS, steering rules, portable domain shortcuts, and complete agent role coverage
+  - Not Proven: Future build plan quality until the system is used against the site survey, artwork, and snippets
+  - Files Touched: agents/AGENT_HARD_LOCK_RULES.md, agents/AGENT_PERMISSIONS_ACTIONS_ONE_SHEET.md, agents/AGENT_TRIGGER_REGISTRY.md, agents/MY_WORKSPACE_GUIDE.md, agents/*.agent.md, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Read IDEAS FOR SITE.docx and run the portable agent sequence for the Rebecca Jones interactive author site
+
+- [2026-06-01] [09:24 PM]
+  - Agent: Scribe
+  - Task: Add repo continuity files and LICL workflow rule
+  - Governing Reference: User instruction
+  - Checked: Agent hard locks, guide, permissions sheet, trigger registry, and activity log
+  - Changed: Added `planned_work.md`, `completed_work.md`, and `LICL` workflow rules to the portable agent system
+  - Found: Repo handoff needs a durable todo and completion log so work can resume across assistants
+  - Proven: Core agent docs now mention `LICL` and the continuity files
+  - Not Proven: Whether this repo already has `planned_work.md` or `completed_work.md`
+  - Files Touched: agents/AGENT_HARD_LOCK_RULES.md, agents/AGENT_PERMISSIONS_ACTIONS_ONE_SHEET.md, agents/AGENT_TRIGGER_REGISTRY.md, agents/MY_WORKSPACE_GUIDE.md, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Search for or create `planned_work.md` and `completed_work.md` before the next substantial build task
+
+- [2026-06-01] [09:29 PM]
+  - Agent: Scribe
+  - Task: Strengthen work continuity file behavior
+  - Governing Reference: User instruction
+  - Checked: Continuity rules in guide, hard locks, permissions sheet, trigger registry, and current repo root
+  - Changed: Added immediate creation rule for missing work logs and reconciliation rule for existing logs
+  - Found: This repo did not yet have `planned_work.md` or `completed_work.md`
+  - Proven: Core agent docs now require creating missing logs and checking planned work against completed work before starting
+  - Not Proven: Future adherence until the next task uses the workflow
+  - Files Touched: agents/AGENT_HARD_LOCK_RULES.md, agents/AGENT_PERMISSIONS_ACTIONS_ONE_SHEET.md, agents/AGENT_TRIGGER_REGISTRY.md, agents/MY_WORKSPACE_GUIDE.md, agents/AGENT_ACTIVITY_LOG.md, planned_work.md, completed_work.md
+  - Status: COMPLETE
+  - Next Step: Use the logs before planning the Rebecca Jones interactive site
+
+- [2026-06-01] [09:36 PM]
+  - Agent: Scribe
+  - Task: Consolidate redundant agent system docs and lint markdown
+  - Governing Reference: User instruction
+  - Checked: Agent docs, root package metadata, planned work log, completed work log, and stale references
+  - Changed: Consolidated repeated control docs into `agents/AGENT_SYSTEM.md`; removed redundant control files; tightened root package metadata; added markdownlint config
+  - Found: Rules were duplicated across multiple files and the root package still used a generic template name
+  - Proven: The active agent system now has one canonical control file plus role files
+  - Not Proven: Runtime web build status; this pass only covered docs and package metadata
+  - Files Touched: .markdownlint-cli2.jsonc, agents/AGENT_SYSTEM.md, removed redundant agent control docs, agents/scribe.agent.md, agents/AGENT_ACTIVITY_LOG.md, package.json, planned_work.md, completed_work.md
+  - Status: COMPLETE
+  - Next Step: Read `IDEAS FOR SITE.docx` and plan the Rebecca Jones interactive site
+
+- [2026-06-01] [09:52 PM]
+  - Agent: Mo, Ezra, Dan, Gabe, Josh, Mike, Nathan
+  - Task: Plan backend CMS build for Rebecca Jones author site
+  - Governing Reference: User instruction, `planned_work.md`, `completed_work.md`, and `agents/AGENT_SYSTEM.md`
+  - Checked: Repo structure, work logs, source snippets, frontend requested fields, and portable agent rules
+  - Changed: Logged backend CMS task before implementation
+  - Found: Backend needs admin auth, protected CMS routes, content persistence, and public content API contracts for Copilot
+  - Proven: `planned_work.md` already lists frontend-requested CMS fields
+  - Not Proven: Build/lint status until implementation and checks run
+  - Files Touched: planned_work.md, agents/AGENT_ACTIVITY_LOG.md
+  - Status: PARTIAL
+  - Next Step: Scaffold Next.js backend/CMS and verify
+- [2026-06-02] [09:16 PM]
+  - Agent: Gabe, Mike, Nathan
+  - Task: Remove author-name prefix from About page headline
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: planned_work.md, completed_work.md, web/src/app/about/page.tsx
+  - Changed: Updated the About page headline to start directly with the genre statement.
+  - Found: Homepage announcement copy was already updated; About page still had the older prefix.
+  - Proven: Local source now contains `Science fiction with grit, faith, mystery, and nerve.`
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/about/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue requested homepage/series polish without opening the browser unless explicitly asked.
+- [2026-06-02] [09:18 PM]
+  - Agent: Gabe, Mike, Nathan
+  - Task: Match Working Title 1 graphic sizing to volumes 2-5
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: planned_work.md, completed_work.md, web/src/app/globals.css
+  - Changed: Removed the first-card-only `.series-book-art` background-size override.
+  - Found: Volume 1 was using `background-size: 84% auto` while the other volume graphics used the shared `contain` sizing.
+  - Proven: Source now applies the same `.series-book-art` sizing rule to all series cards.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue series-section polish or implement the planned future-volumes feature when approved.
+- [2026-06-02] [10:01 PM]
+  - Agent: Gabe, Mike, Nathan
+  - Task: Add low-opacity looping card videos to Qualem and Character room cards
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: planned_work.md, completed_work.md, web/public/artwork/card_videos, web/src/app/page.tsx, web/src/app/globals.css
+  - Changed: Added separate muted looping video layers beneath the card text and animated opacity at the loop edge.
+  - Found: Four usable videos exist under `web/public/artwork/card_videos`; macOS `._*` sidecar files were ignored.
+  - Proven: Source references `video 1.mp4` for Qualem and `video 2.mp4` for Character room with text layered above the video.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/page.tsx, web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Tune video opacity or swap video assignments if the selected loops do not fit the card mood.
+- [2026-06-02] [10:44 PM]
+  - Agent: Gabe, Mike, Nathan
+  - Task: Use provided About Me image in homepage author section
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: planned_work.md, completed_work.md, web/about_me.png, web/src/app/page.tsx, web/src/app/globals.css
+  - Changed: Copied `web/about_me.png` into the public web path and updated `.author-portrait` to use it.
+  - Found: The author section portrait was controlled by CSS background image, not inline markup.
+  - Proven: Source now references `/about_me.png`, and `web/public/about_me.png` exists.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/public/about_me.png, web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Tune portrait positioning if the crop needs adjustment.
+- [2026-06-02] [10:49 PM]
+  - Agent: Gabe, Nathan
+  - Task: Remove series-shelf description copy
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx, web/src/components/SectionTitle.tsx
+  - Changed: Removed the `Book One has a name...` body text from the homepage series section.
+  - Found: `SectionTitle` already supports an omitted body, so no component change was needed.
+  - Proven: The requested sentence no longer appears in source.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue copy/visual polish as requested.
+- [2026-06-02] [10:50 PM]
+  - Agent: Gabe, Nathan
+  - Task: Stabilize About author image responsive sizing
+  - Governing Reference: User report and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/globals.css
+  - Changed: Replaced the author portrait's viewport-growing `min-height` with capped explicit height and mobile sizing rules.
+  - Found: The portrait could grow larger at intermediate widths before the one-column breakpoint changed the layout.
+  - Proven: Source now caps desktop portrait height at 500px and tablet portrait height at 420px.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Tune crop position if the portrait framing needs adjustment.
+- [2026-06-02] [11:01 PM]
+  - Agent: Gabe, Nathan
+  - Task: Replace book and series cover art with ordered cover files
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/public/book_covers, web/src/lib/mock-cms.ts, web/src/app/globals.css
+  - Changed: Mapped `cover_0.jpg` to the featured book cover and `cover_1.png` through `cover_5.jpg` to Volumes 1-5.
+  - Found: The homepage featured cover used CSS while the Books page and series cards used mock CMS paths.
+  - Proven: Source now references the ordered `/book_covers/cover_*` paths.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/lib/mock-cms.ts, web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Tune cover crop/sizing if any specific cover needs different framing.
+- [2026-06-02] [11:07 PM]
+  - Agent: Gabe, Nathan
+  - Task: Add Rebecca Jones social links from Linktree
+  - Governing Reference: User-provided Linktree and agents/AGENT_SYSTEM.md
+  - Checked: Linktree HTML, web/src/lib/mock-cms.ts, web/src/components/Footer.tsx, web/src/app/globals.css
+  - Changed: Added TikTok, Instagram, Facebook, and Threads profile links to footer data and rendering.
+  - Found: Linktree positions the author as Science Fiction with Gospel Foundations and ATLAS of the Deliverer.
+  - Proven: Footer now renders social links from `socialLinks`, and localhost returns `200 OK`.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/lib/mock-cms.ts, web/src/components/Footer.tsx, web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Use Linktree context for future copy updates around ATLAS, KURAK, and Fall 2026.
+- [2026-06-02] [11:09 PM]
+  - Agent: Gabe, Nathan
+  - Task: Update displayed series volume titles
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/lib/mock-cms.ts
+  - Changed: Set Volume 1 to `Kurak`, Volume 2 to `Title reveal soon`, and left Volumes 3-5 as `Working title`.
+  - Found: The series card titles are driven by `seriesBooks` mock data.
+  - Proven: Source now contains the requested title order.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/lib/mock-cms.ts, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue series copy or cover polish as requested.
+- [2026-06-02] [11:11 PM]
+  - Agent: Gabe, Nathan
+  - Task: Convert secondary pages to coming soon placeholders
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/about/page.tsx, web/src/app/books/page.tsx, web/src/app/contact/page.tsx, web/src/app/series/page.tsx, web/src/app/shop/page.tsx
+  - Changed: Replaced About, Books, Contact, Series, and Shop page content with simple `Coming soon.` placeholders.
+  - Found: Homepage remains the active public experience while secondary pages are hidden until ready.
+  - Proven: Secondary route source files no longer expose the previous detailed page content.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/about/page.tsx, web/src/app/books/page.tsx, web/src/app/contact/page.tsx, web/src/app/series/page.tsx, web/src/app/shop/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Rebuild individual pages when their content is approved.
+- [2026-06-02] [11:12 PM]
+  - Agent: Gabe, Nathan
+  - Task: Keep book cards as a horizontal carousel at all widths
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/globals.css
+  - Changed: Replaced responsive series grid stacking with a one-row horizontal scroll carousel and snap points.
+  - Found: Tablet and mobile media queries were forcing the book cards into 3-column and 1-column stacked layouts.
+  - Proven: Source now uses flex carousel sizing for `.series-book-grid` and removes the mobile stacked card override.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Tune carousel card width if the user wants more or fewer covers visible at once.
+- [2026-06-02] [11:15 PM]
+  - Agent: Gabe, Nathan
+  - Task: Stop About author portrait from cropping the head
+  - Governing Reference: User report and agents/AGENT_SYSTEM.md
+  - Checked: web/public/about_me.png dimensions and web/src/app/globals.css
+  - Changed: Switched the author portrait from `cover` cropping to `contain` with the real image aspect ratio.
+  - Found: The image is 1088x1450, but CSS was using `background-size: cover`, which cropped the top of the portrait.
+  - Proven: Source now uses `contain no-repeat` and `aspect-ratio: 1088 / 1450` for `.author-portrait`.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: If the image needs a tighter design, use a prepared crop that preserves the full head instead of CSS cropping.
+- [2026-06-02] [11:17 PM]
+  - Agent: Gabe, Nathan
+  - Task: Add explicit controls to the book carousel
+  - Governing Reference: User report and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx and web/src/app/globals.css
+  - Changed: Replaced the passive horizontal book row with a client carousel component and visible previous/next controls.
+  - Found: The books were in a horizontal overflow track, but there were no controls, so tight viewports made later books feel missing.
+  - Proven: Source now renders `SeriesBookCarousel` with controls that scroll the track.
+  - Not Proven: Browser visual review was intentionally skipped per user instruction.
+  - Files Touched: web/src/components/SeriesBookCarousel.tsx, web/src/app/page.tsx, web/src/app/globals.css, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Tune control placement or card widths if the viewport needs a different number of visible covers.
+- [2026-06-02] [11:24 PM]
+  - Agent: Gabe, Mike, Nathan
+  - Task: Correct featured book copy placement
+  - Governing Reference: User request, Linktree page, and agents/AGENT_SYSTEM.md
+  - Checked: Linktree content, web/src/lib/mock-cms.ts, web/src/app/page.tsx, TypeScript diagnostics
+  - Changed: Removed the map/warning sentence, moved the Qualem description into the quote position, hid the now-empty small description paragraph, and added `(coming soon)` under the homepage shop link.
+  - Found: Linktree supports the author/site context as Rebecca Jones, Sci-Fi Author, Science Fiction with Gospel Foundations, ATLAS of the Deliverer, and Part I: KURAK Fall 2026.
+  - Proven: The old map sentence no longer appears in `web/src`; `npm --prefix web run typecheck` passes.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/lib/mock-cms.ts, web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Visually confirm the homepage section in browser if requested.
+- [2026-06-02] [11:27 PM]
+  - Agent: Gabe, Nathan
+  - Task: Replace featured book eyebrow label
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source text
+  - Changed: Replaced `Popular among readers` with `An Epic Series` in the homepage featured book section.
+  - Found: The label is hardcoded in the homepage component.
+  - Proven: Source now contains `An Epic Series`; no diagnostics were found for the file.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Visually confirm the homepage if requested.
+- [2026-06-02] [11:29 PM]
+  - Agent: Gabe, Nathan
+  - Task: Mark author link coming soon
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and current author section source
+  - Changed: Added `(coming soon)` below the homepage `Learn more about the author` link.
+  - Found: The book link already used the same line-break pattern for `(coming soon)`.
+  - Proven: Source now contains the author link followed by `(coming soon)`; no diagnostics were found for the file.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Visually confirm the homepage if requested.
+- [2026-06-02] [11:33 PM]
+  - Agent: Gabe, Nathan
+  - Task: Build contact page from verified social links
+  - Governing Reference: User request, Linktree page, and agents/AGENT_SYSTEM.md
+  - Checked: Linktree content, web/src/lib/mock-cms.ts, web/src/app/contact/page.tsx, existing contact card styles, TypeScript diagnostics
+  - Changed: Replaced the contact placeholder with social/contact cards for TikTok, Instagram, Facebook, Threads, Linktree, and an email-coming-soon note.
+  - Found: Linktree exposes public social profiles and a Linktree hub, but no confirmed public email address.
+  - Proven: `npm --prefix web run typecheck` passes and no diagnostics were found for the contact page.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/contact/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Add a real email address when Rebecca provides one.
+- [2026-06-02] [11:38 PM]
+  - Agent: Gabe, Nathan
+  - Task: Add confirmed contact email
+  - Governing Reference: User-provided email and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/contact/page.tsx diagnostics and TypeScript output
+  - Changed: Replaced the email-coming-soon placeholder with a `mailto:` link for `becca.adams14@gmail.com`.
+  - Found: User confirmed the public email address.
+  - Proven: `npm --prefix web run typecheck` passes and no diagnostics were found for the contact page.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/contact/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue contact page visual polish after the build remains stable.
+- [2026-06-02] [11:40 PM]
+  - Agent: Gabe, Nathan
+  - Task: Soften shop coming-soon copy
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source text
+  - Changed: Replaced the mechanical store-opening sentence with warmer copy about merch and reader extras being added over time.
+  - Found: The copy lives in the homepage shop-coming-soon card.
+  - Proven: The old sentence no longer appears in the homepage file and no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue copy polish as requested.
+- [2026-06-02] [11:41 PM]
+  - Agent: Gabe, Nathan
+  - Task: Make shop copy first-person
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source text
+  - Changed: Updated the shop-coming-soon copy to first-person wording for Rebecca's own site.
+  - Found: Third-person wording felt too external for an author-owned page.
+  - Proven: Source now says `I'll add merch and reader extras over time as they become available.` and no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue copy polish as requested.
+- [2026-06-02] [11:42 PM]
+  - Agent: Gabe, Nathan
+  - Task: Shorten shop extras copy
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source text
+  - Changed: Replaced the shop-coming-soon sentence with `Merch and reader extras on the way! Check back!`.
+  - Found: User wanted the direct shorter wording.
+  - Proven: Source contains the requested sentence and no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue copy polish as requested.
+- [2026-06-02] [11:43 PM]
+  - Agent: Gabe, Nathan
+  - Task: Remove shop card copy redundancy
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source text
+  - Changed: Changed the shop-card heading to `Books, editions, and extras.` so it no longer repeats the body line's `on the way` message.
+  - Found: Heading and body both said the same status idea.
+  - Proven: Source now pairs `Books, editions, and extras.` with `Merch and reader extras on the way! Check back!`; no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue copy polish as requested.
+- [2026-06-02] [11:44 PM]
+  - Agent: Gabe, Nathan
+  - Task: Center shop hero copy
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source styles
+  - Changed: Centered the shop-coming-soon card content with centered copy text and body paragraph width.
+  - Found: The card previously anchored copy at the bottom-left with `place-content: end start`.
+  - Proven: Source now uses `place-content: center` and no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue visual polish as requested.
+- [2026-06-02] [11:45 PM]
+  - Agent: Gabe, Nathan
+  - Task: Replace shop hero CTA with disabled coming-soon button
+  - Governing Reference: User request and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx diagnostics and source text
+  - Changed: Replaced the shop hero `/books` link labeled `Browse the books` with a disabled `Coming soon` button.
+  - Found: The CTA should not navigate while the shop/books destination is still coming soon.
+  - Proven: `Browse the books` no longer appears in the homepage file and no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue visual polish as requested.
+- [2026-06-02] [11:47 PM]
+  - Agent: Mike, Nathan
+  - Task: Verify series-section title against Linktree
+  - Governing Reference: User request, Linktree page, and agents/AGENT_SYSTEM.md
+  - Checked: Linktree content and web/src/app/page.tsx diagnostics
+  - Changed: Replaced unsupported `Atlas opens the door.` with Linktree-backed `ATLAS of the Deliverer Series.`
+  - Found: Linktree uses `ATLAS of the Deliverer Series` and `Part I: KURAK (Fall 2026)`, not the previous metaphor.
+  - Proven: The old phrase no longer appears in the homepage file and no diagnostics were found.
+  - Not Proven: Browser visual review was not run in this pass.
+  - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Continue copy verification against Linktree/source material as requested.
