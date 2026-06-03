@@ -25,6 +25,7 @@ Before starting substantial work:
 - Built the first public Next.js frontend pass in `web/` with mock content, local artwork, author-site routes, dark sci-fi styling, and frontend-only placeholders for future data wiring.
 - Started and verified the frontend on `http://localhost:3000`, leaving backend port `3001` available.
 - Added stronger author-site typography, removed public-facing program jargon, simplified busy homepage elements, and adjusted character portrait framing so Xalis crops closer in the character card.
+- Deployed the public `web/` Next.js site to Vercel and configured `rebeccajoneswrites.com` plus `www.rebeccajoneswrites.com` at Name.com to serve it over HTTPS.
 
 ## Notes
 

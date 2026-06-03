@@ -429,3 +429,15 @@
   - Files Touched: web/src/app/page.tsx, agents/AGENT_ACTIVITY_LOG.md
   - Status: COMPLETE
   - Next Step: Continue copy verification against Linktree/source material as requested.
+- [2026-06-03] [12:21 AM]
+  - Agent: Scribe, Nathan
+  - Task: Deploy Rebecca Writes site and connect Name.com domain
+  - Governing Reference: User request, agents/AGENT_SYSTEM.md, Vercel CLI output, and Name.com DNS records
+  - Checked: Vercel deployment status, Vercel alias/domain settings, Name.com DNS records, HTTPS responses, and local git status
+  - Changed: Deployed `web/` to Vercel, added aliases for `rebeccajoneswrites.com` and `www.rebeccajoneswrites.com`, added Name.com A records to `76.76.21.21`, disabled Vercel SSO deployment protection, and ignored local `.vercel/` metadata.
+  - Found: The default Vercel production URL was public, but custom domains initially returned Vercel `401` until SSO deployment protection was disabled.
+  - Proven: `curl -I https://rebeccajoneswrites.com` and `curl -I https://www.rebeccajoneswrites.com` both returned `HTTP/2 200`; `npx vercel project protection rebeccawrites --format json` shows `ssoProtection: null`.
+  - Not Proven: Global DNS propagation for every resolver; Name.com notes DNS changes can take up to 48 hours.
+  - Files Touched: .gitignore, web/.gitignore, completed_work.md, agents/AGENT_ACTIVITY_LOG.md
+  - Status: COMPLETE
+  - Next Step: Keep an eye on DNS propagation and continue site content polish when requested.

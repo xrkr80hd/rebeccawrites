@@ -21,6 +21,9 @@ build/
 .playwright-cli/
 output/
 
+# Vercel local project metadata
+.vercel/
+
 # Logs
 *.log
 npm-debug.log*
