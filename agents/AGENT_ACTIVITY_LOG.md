@@ -441,3 +441,15 @@
   - Files Touched: .gitignore, web/.gitignore, completed_work.md, agents/AGENT_ACTIVITY_LOG.md
   - Status: COMPLETE
   - Next Step: Keep an eye on DNS propagation and continue site content polish when requested.
+- [2026-06-03] [12:25 AM]
+  - Agent: Gabe, Mike, Nathan, Scribe
+  - Task: Clean up featured-book layout, completed-work log, and share title
+  - Governing Reference: User screenshot, user request, and agents/AGENT_SYSTEM.md
+  - Checked: web/src/app/page.tsx, web/src/app/globals.css, web/src/app/layout.tsx, completed_work.md, local desktop screenshot, local mobile screenshot, typecheck, and production build
+  - Changed: Replaced the oversized background-cover treatment with a contained book cover, darker copy panel, smaller title/quote scale, and responsive stacking rules; expanded `completed_work.md`; changed metadata/share title to `Rebecca Jones Author`.
+  - Found: The prior layout let the Atlas cover art sprawl behind the copy, making the title and quote fight the background; the browser/share title still said `Rebecca Jones | Interactive Sci-Fi Author Site`.
+  - Proven: `npm --prefix web run typecheck` and `npm --prefix web run build` pass; local screenshots show separated cover and readable copy on desktop and mobile.
+  - Not Proven: Live Vercel deployment until the production redeploy completes.
+  - Files Touched: web/src/app/globals.css, web/src/app/layout.tsx, completed_work.md, agents/AGENT_ACTIVITY_LOG.md
+  - Status: PARTIAL
+  - Next Step: Commit, push, redeploy to Vercel, and verify the live custom domain.

@@ -21,9 +21,22 @@ const literary = Spectral({
 });
 
 export const metadata: Metadata = {
-  title: "Rebecca Jones | Interactive Sci-Fi Author Site",
+  title: "Rebecca Jones Author",
   description:
-    "A dark, immersive science fiction author experience for Rebecca Jones, built for books, worlds, characters, shop, and reader dispatches.",
+    "The official author site for Rebecca Jones, featuring books, series updates, characters, shop news, and reader dispatches.",
+  openGraph: {
+    title: "Rebecca Jones Author",
+    description:
+      "The official author site for Rebecca Jones, featuring books, series updates, characters, shop news, and reader dispatches.",
+    siteName: "Rebecca Jones Author",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rebecca Jones Author",
+    description:
+      "The official author site for Rebecca Jones, featuring books, series updates, characters, shop news, and reader dispatches.",
+  },
 };
 
 export default function RootLayout({
