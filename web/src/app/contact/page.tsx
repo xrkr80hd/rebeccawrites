@@ -109,11 +109,11 @@ export default function ContactPage() {
         `}</style>
         <div className="contact-social-panel">
           <p className="eyebrow">Contact</p>
-          <h1>Connect with Rebecca.</h1>
+          <h1>Connect with R.L. Jones.</h1>
           <p className="page-lede">
-            Follow Rebecca Jones for ATLAS of the Deliverer updates, Kurak notes, launch news, and reader extras.
+            Follow R.L. Jones for ATLAS of the Deliverer updates, Kurak notes, launch news, and reader extras.
           </p>
-          <div className="contact-icon-row" aria-label="Rebecca Jones social links">
+          <div className="contact-icon-row" aria-label="R.L. Jones social links">
             {socialLinks.map((link) => {
               const SocialIcon = socialIcons[link.label];
 

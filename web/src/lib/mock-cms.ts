@@ -43,7 +43,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const siteSettings = {
-  authorName: "Rebecca Jones",
+  authorName: "R.L. Jones",
   tagline: "Science fiction with gospel foundations.",
   primaryGenre: "Science Fiction",
   audience: "YA and New Adult readers",
@@ -58,9 +58,9 @@ export const socialLinks: SocialLink[] = [
 
 export const hero = {
   kicker: "Official author site",
-  headline: "rebeccajoneswrites.com",
+  headline: "RLjoneswrites.com",
   summary:
-    "The official author site for Rebecca Jones, where readers can explore her books, worlds, characters, and future releases.",
+    "The official author site for R.L. Jones, where readers can explore her books, worlds, characters, and future releases.",
   primaryCtaLabel: "Preview the book",
   primaryCtaHref: "#look-inside",
   secondaryCtaLabel: "Meet the characters",

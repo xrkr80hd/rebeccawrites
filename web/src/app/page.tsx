@@ -35,7 +35,7 @@ export default function Home() {
         <section className="worlds-band">
           <SectionTitle
             eyebrow="Explore the shelves"
-            title="The worlds of Rebecca Jones."
+            title="The worlds of R.L. Jones."
             body="Start with the books, characters, and lore behind the stories."
           />
           <div className="world-card-grid">
@@ -71,10 +71,10 @@ export default function Home() {
         </section>
 
         <section className="author-band">
-          <div className="author-portrait" aria-label="Rebecca Jones portrait" />
+          <div className="author-portrait" aria-label="R.L. Jones portrait" />
           <div className="author-copy">
             <p className="eyebrow">About the author</p>
-            <h2>Hey, I&apos;m Rebecca.</h2>
+            <h2>Hey, I&apos;m R.L. Jones.</h2>
             <p>
               This is the home base for my science fiction books, world notes, launch updates, and reader extras. Pull up a chair and start with the story.
             </p>
@@ -250,7 +250,7 @@ export default function Home() {
         <section className="dispatch-band">
           <div>
             <p className="eyebrow">Reader dispatch</p>
-            <h2>Updates from Rebecca&apos;s writing desk.</h2>
+            <h2>Updates from R.L. Jones&apos;s writing desk.</h2>
             <p>Launch notes, world fragments, book progress, and first looks when the gates open.</p>
           </div>
           <Link className="button secondary" href="/contact">

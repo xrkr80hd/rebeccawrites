@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rebecca Writes CMS",
-  description: "Backend CMS for the Rebecca Jones author site.",
+  title: "RLjoneswrites CMS",
+  description: "Backend CMS for the R.L. Jones author site.",
 };
 
 export default function RootLayout({

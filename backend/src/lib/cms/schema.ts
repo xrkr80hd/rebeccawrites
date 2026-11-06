@@ -117,7 +117,7 @@ export type CmsContent = z.infer<typeof cmsContentSchema>;
 
 export const defaultContent: CmsContent = {
   siteSettings: {
-    authorName: "Rebecca Jones",
+    authorName: "R.L. Jones",
     tagline: "Christian sci-fi author",
     primaryGenre: "Science fiction",
     audience: "Readers who love faith, wonder, prophecy, and epic stakes.",
@@ -129,7 +129,7 @@ export const defaultContent: CmsContent = {
     headline: "Atlas of the Deliverer",
     kicker: "A sci-fi world built on faith, prophecy, and impossible journeys.",
     summary:
-      "An interactive author experience for Rebecca Jones and her unfolding sci-fi writings.",
+      "An interactive author experience for R.L. Jones and her unfolding sci-fi writings.",
     primaryCtaLabel: "Explore The Atlas",
     primaryCtaHref: "/world",
     secondaryCtaLabel: "Join Updates",
@@ -160,7 +160,7 @@ export const defaultContent: CmsContent = {
   updates: [],
   reviews: [],
   newsletter: {
-    heading: "Follow Rebecca's writing journey",
+    heading: "Follow R.L. Jones's writing journey",
     description:
       "Receive updates on Atlas of the Deliverer, launch news, and future reader extras.",
     provider: "manual",
